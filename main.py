@@ -81,3 +81,24 @@ class User:
 
     def delete_email(self, index):
         self.inbox.delete_email(index)
+
+def main():
+    dishant = User('Dishant')
+    unknown = User('Unknown')
+
+    dishant.send_email(unknown, 'Hello', 'Hey, i have been missing you. let me know when you are free')
+    unknown.send_email(dishant, 'Re: Hey', 'Hey dishant, lets meet')
+
+
+    dishant.check_inbox()
+    unknown.check_inbox()
+
+    dishant.read_email(1)
+    unknown.read_email(1)
+
+    dishant.check_inbox()
+    unknown.check_inbox()
+
+
+if __name__ == '__main__':
+    main()
